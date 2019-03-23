@@ -1,14 +1,12 @@
 
 
-## Real time forms validation using Triggers and Converters in Xamarin.Forms
+## Real time form validation using Triggers and Converters in Xamarin.Forms
 
-In this Xamarin.Forms project, we want to use Triggers and Converters to validate in real time login forms.
+In this Xamarin.Forms project, we want to use **Triggers** and **Converters** to validate in real time login form.
 
 ![](FormValidation/screenshots/post1sur3.png)
 
 ![](FormValidation/screenshots/post2sur3.png)
-
-![](FormValidation/screenshots/post3sur3.png)
 
 
 
@@ -26,7 +24,7 @@ In this Xamarin.Forms project, we want to use Triggers and Converters to validat
 
 ## Topic
 
-The goal is to check if  email(user name) and password are correct to enable login button.
+The goal is to check if  email(user name) and password are correct before enable login button.
 
 - The email must match the following regular expression `^[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z]{2,6}$` 
 - The password must have 8 characters at least.
@@ -36,7 +34,7 @@ The goal is to check if  email(user name) and password are correct to enable log
 
 ## Our converters
 
-- Code for converter that validate email address and used by trigger to enable login button:
+- Code for Converter that validate email address and used by trigger to enable login button:
 
 ```csharp
 using System;
@@ -84,7 +82,7 @@ namespace FormValidation.Converters
 
 ```
 
-- Code for converter that validate email address and used by trigger to show email error label:
+- Code for Converter that validate email address and used by trigger to show email error label:
 
 ```csharp
 using System;
@@ -134,7 +132,7 @@ namespace FormValidation.Converters
 
 ```
 
-- Code for converter that validate password  and used by trigger to enable login button:
+- Code for Converter that validate password  and used by trigger to enable login button:
 
 ```csharp
 using System;
@@ -174,7 +172,7 @@ namespace FormValidation.Converters
 }
 ```
 
-- Code for converter that validate password and used by trigger to show password error label:
+- Code for Converter that validate password and used by trigger to show password error label:
 
 ```csharp
 using System;
