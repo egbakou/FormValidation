@@ -3,7 +3,7 @@
 
 namespace FormValidation
 {
-    public partial class FormsPage : TabbedPage
+    public partial class FormsPage : ContentPage
     {
         public FormsPage()
         {

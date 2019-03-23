@@ -1,130 +1,130 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage
+<ContentPage
     x:Class="FormValidation.FormsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:FormValidation.Controls"
     xmlns:converters="clr-namespace:FormValidation.Converters">
 
-    <!--  Ressources  -->
-    <TabbedPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
-    </TabbedPage.Padding>
-    <TabbedPage.Resources>
+    <!--  RESSOURCES  -->
+    <ContentPage.Resources>
         <ResourceDictionary>
             <converters:UsernameCorrectConverter x:Key="UsernameCorrectConverter" />
             <converters:UsernameCorrectToHideLabelConverter x:Key="UsernameCorrectToHideLabelConverter" />
             <converters:PasswordCorrectConverter x:Key="PasswordCorrectConverter" />
             <converters:PasswordCorrectToHideLabelConverter x:Key="PasswordCorrectToHideLabelConverter" />
         </ResourceDictionary>
-    </TabbedPage.Resources>
+    </ContentPage.Resources>
 
-    <!--  SIGN IN TabbedPage section  -->
-    <ContentPage Icon="login.png">
-        <StackLayout VerticalOptions="Center">
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <controls:DashBoardButton
-                    Margin="0"
-                    Padding="0"
-                    HorizontalOptions="Center"
-                    Icon="Shopping.png"
-                    Label="SHOPPING CENTER" />
-            </StackLayout>
-            <StackLayout
-                Padding="20"
-                Spacing="20"
-                VerticalOptions="Center">
-                <Label
-                    FontSize="Small"
-                    HorizontalTextAlignment="Center"
-                    IsVisible="False"
-                    Text="Invalid email ..."
-                    TextColor="OrangeRed">
-                    <Label.Triggers>
-                        <MultiTrigger TargetType="Label">
-                            <MultiTrigger.Conditions>
-                                <BindingCondition Binding="{Binding Source={x:Reference UserNameEntry}, Path=Text, Converter={StaticResource UsernameCorrectToHideLabelConverter}}" Value="False" />
-                            </MultiTrigger.Conditions>
-                            <Setter Property="IsVisible" Value="True" />
-                        </MultiTrigger>
-                    </Label.Triggers>
-                </Label>
-                <Label
-                    FontSize="Small"
-                    HorizontalTextAlignment="Center"
-                    IsVisible="False"
-                    Text="Invalid password ..."
-                    TextColor="OrangeRed">
-                    <Label.Triggers>
-                        <MultiTrigger TargetType="Label">
-                            <MultiTrigger.Conditions>
-                                <BindingCondition Binding="{Binding Source={x:Reference PasswordEntry}, Path=Text, Converter={StaticResource PasswordCorrectToHideLabelConverter}}" Value="False" />
-                            </MultiTrigger.Conditions>
-                            <Setter Property="IsVisible" Value="True" />
-                        </MultiTrigger>
-                    </Label.Triggers>
-                </Label>
-                <Entry
-                    x:Name="UserNameEntry"
-                    Focused="UserNameEntry_Focused"
-                    Keyboard="Email"
-                    MaxLength="60"
-                    Placeholder="Enter email"
-                    PlaceholderColor="DarkGray"
-                    Unfocused="UserNameEntry_Unfocused" />
-                <Entry
-                    x:Name="PasswordEntry"
-                    Focused="PasswordEntry_Focused"
-                    IsPassword="True"
-                    Placeholder="Enter password"
-                    PlaceholderColor="DarkGray"
-                    Unfocused="PasswordEntry_Unfocused" />
-                <Button
-                    x:Name="LoginBt"
-                    BackgroundColor="#77d065"
-                    Clicked="LoginBt_Clicked"
-                    IsEnabled="False"
-                    Text="Login"
-                    TextColor="White">
-                    <Button.Triggers>
-                        <MultiTrigger TargetType="Button">
-                            <MultiTrigger.Conditions>
-                                <BindingCondition Binding="{Binding Source={x:Reference UserNameEntry}, Path=Text, Converter={StaticResource UsernameCorrectConverter}}" Value="True" />
-                                <BindingCondition Binding="{Binding Source={x:Reference PasswordEntry}, Path=Text, Converter={StaticResource PasswordCorrectConverter}}" Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter Property="IsEnabled" Value="True" />
-                        </MultiTrigger>
-                    </Button.Triggers>
-                </Button>
 
-                <ActivityIndicator
-                    x:Name="ShowLoginIndicator"
-                    HorizontalOptions="Center"
-                    IsRunning="false"
-                    IsVisible="False"
-                    VerticalOptions="Center"
-                    Color="#ea0ea1" />
-            </StackLayout>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+
+
+    <StackLayout VerticalOptions="Center">
+        <!--  COMPANY LOGO  -->
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <controls:DashBoardButton
+                Margin="0"
+                Padding="0"
+                HorizontalOptions="Center"
+                Icon="Shopping.png"
+                Label="SHOPPING CENTER" />
         </StackLayout>
-    </ContentPage>
 
-
-    <!--  SIGN UP TabbedPage section  -->
-    <ContentPage Icon="signup.png">
+        <!--  FORM CONTAINER  -->
         <StackLayout
             Padding="20"
             Spacing="20"
             VerticalOptions="Center">
-            <Entry Placeholder="Fist Name" />
-            <Entry Placeholder="Last Name" />
-            <Entry Placeholder="Username" />
-            <Entry IsPassword="True" Placeholder="Password" />
-            <Entry IsPassword="True" Placeholder="Confiramtion" />
-            <Button
-                BackgroundColor="#77d065"
-                Text="Validate"
-                TextColor="White" />
-        </StackLayout>
-    </ContentPage>
+            <!--  ERROR LABELS  -->
+            <Label
+                FontSize="Small"
+                HorizontalTextAlignment="Center"
+                IsVisible="False"
+                Text="Invalid email ..."
+                TextColor="OrangeRed">
+                <Label.Triggers>
+                    <MultiTrigger TargetType="Label">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference UserNameEntry}, Path=Text, Converter={StaticResource UsernameCorrectToHideLabelConverter}}" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsVisible" Value="True" />
+                    </MultiTrigger>
+                </Label.Triggers>
+            </Label>
+            <Label
+                FontSize="Small"
+                HorizontalTextAlignment="Center"
+                IsVisible="False"
+                Text="Invalid password ..."
+                TextColor="OrangeRed">
+                <Label.Triggers>
+                    <MultiTrigger TargetType="Label">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference PasswordEntry}, Path=Text, Converter={StaticResource PasswordCorrectToHideLabelConverter}}" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsVisible" Value="True" />
+                    </MultiTrigger>
+                </Label.Triggers>
+            </Label>
 
-</TabbedPage>
+            <!--  EMAIL AND PASSWORD ENTRY  -->
+            <Entry
+                x:Name="UserNameEntry"
+                Focused="UserNameEntry_Focused"
+                Keyboard="Email"
+                MaxLength="60"
+                Placeholder="Enter email"
+                PlaceholderColor="DarkGray"
+                Unfocused="UserNameEntry_Unfocused" />
+            <Entry
+                x:Name="PasswordEntry"
+                Focused="PasswordEntry_Focused"
+                IsPassword="True"
+                Placeholder="Enter password"
+                PlaceholderColor="DarkGray"
+                Unfocused="PasswordEntry_Unfocused" />
+
+            <!--  LOGIN BUTTON  -->
+            <Button
+                x:Name="LoginBt"
+                BackgroundColor="#2196F3"
+                Clicked="LoginBt_Clicked"
+                IsEnabled="False"
+                Text="Login"
+                TextColor="White">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference UserNameEntry}, Path=Text, Converter={StaticResource UsernameCorrectConverter}}" Value="True" />
+                            <BindingCondition Binding="{Binding Source={x:Reference PasswordEntry}, Path=Text, Converter={StaticResource PasswordCorrectConverter}}" Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="True" />
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <!--  ACTIVITYINDICATOR: IS RUNNING WHEN CLICK ON LOGIN BUTTON  -->
+            <ActivityIndicator
+                x:Name="ShowLoginIndicator"
+                HorizontalOptions="Center"
+                IsRunning="false"
+                IsVisible="False"
+                VerticalOptions="Center"
+                Color="#ea0ea1">
+                <ActivityIndicator.Triggers>
+                    <MultiTrigger TargetType="ActivityIndicator">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference UserNameEntry}, Path=Text, Converter={StaticResource UsernameCorrectConverter}}" Value="True" />
+                            <BindingCondition Binding="{Binding Source={x:Reference PasswordEntry}, Path=Text, Converter={StaticResource PasswordCorrectConverter}}" Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsVisible" Value="True" />
+                    </MultiTrigger>
+                </ActivityIndicator.Triggers>
+            </ActivityIndicator>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
