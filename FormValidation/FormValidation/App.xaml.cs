@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -11,7 +10,7 @@ namespace FormValidation
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new FormsPage();
         }
 
         protected override void OnStart()

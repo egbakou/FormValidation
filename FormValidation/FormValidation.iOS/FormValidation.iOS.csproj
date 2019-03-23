@@ -157,4 +157,13 @@
       <Name>FormValidation</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Shopping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\signup.png" />
+  </ItemGroup>
 </Project>
