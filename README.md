@@ -4,7 +4,7 @@ In this Xamarin.Forms project, we want to use **Triggers** and **Converters** to
 
 ## Demo on Youtube
 
-[![Alt text](FormValidation/screenshots/demo.jpg)](https://www.youtube.com/watch?v=L6PELicCyMk)
+[![Youtube demo](FormValidation/screenshots/demo.jpg)](https://www.youtube.com/watch?v=L6PELicCyMk)
 
 
 
