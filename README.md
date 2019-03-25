@@ -1,14 +1,8 @@
-
-
-
-
 ## Real time form validation using Triggers and Converters in Xamarin.Forms
 
 In this Xamarin.Forms project, we want to use **Triggers** and **Converters** to validate in real time login form.
 
 <iframe width="708" height="398" src="https://www.youtube.com/embed/L6PELicCyMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 
 ![](FormValidation/screenshots/post1sur3.png)
 
