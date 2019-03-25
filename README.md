@@ -2,11 +2,9 @@
 
 In this Xamarin.Forms project, we want to use **Triggers** and **Converters** to validate in real time login form.
 
-![Demo](https://www.youtube.com/watch?v=L6PELicCyMk)
+## Demo on Youtube
 
-![](FormValidation/screenshots/post1sur3.png)
-
-![](FormValidation/screenshots/post2sur3.png)
+[![Alt text](FormValidation/screenshots/demo.jpg)](https://www.youtube.com/watch?v=L6PELicCyMk)
 
 
 
